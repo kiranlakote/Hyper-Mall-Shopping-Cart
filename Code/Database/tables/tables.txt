@@ -1,0 +1,58 @@
+create user eshop identified by eshop;
+grant connect,resource to eshop;
+connect eshop/eshop
+
+ALTER TABLE CATEGORY DROP CONSTRAINT CATEGORY_ID_pk CASCADE;
+drop table category;
+create table category
+(
+category_id varchar2(20),
+category_name varchar2(20),
+category_desc varchar2(20),
+CONSTRAINT category_id_pk PRIMARY KEY (category_id));
+
+ALTER TABLE PRODUCTS DROP CONSTRAINT PRODUCTS_PK CASCADE;
+drop table products;
+create table products
+(
+product_id number(20),
+cat_id varchar2(20),
+product_name varchar2(20),
+product_desc varchar2(20),
+unit_price   number(20,5),
+units_in_stock number(20),
+units_in_order number(20),
+CONSTRAINT products_pk PRIMARY KEY (product_id),
+CONSTRAINT products_fk FOREIGN KEY (cat_id) REFERENCES category (category_id));
+
+ALTER TABLE ORDERS DROP CONSTRAINT ORDER_pk CASCADE;
+drop table orders;
+
+
+DROP TABLE LIST;
+CREATE TABLE LIST (
+ORDER_ID VARCHAR2(20),
+PRODUCT_ID VARCHAR2(20),
+PRODUCT_NAME VARCHAR2(20),
+QUANTITY NUMBER(20),
+UPRICE NUMBER(20,5),
+TOTAL  NUMBER(20,5),
+CONSTRAINT list_fk FOREIGN KEY (ORDER_ID) REFERENCES ORDERs(ORDER_ID)
+);
+
+drop table merchent;
+create table merchent
+( name varchar2(20) primary key,
+  password varchar2(20)
+);
+
+drop table takeorders;
+create table takeorders(orderid number(5),ordername varchar(15),orderqty number(5),orderprice number(10,2),ordertotprice number(12,2));
+
+
+insert into merchent values('merchent','merchent');
+insert into category values('1','phants','jeans');
+insert into category values('2','shirts','t-shirts');
+
+insert into products values('1','2','nick','t-shirt',123.23,12,12);
+insert into products values('2','2','corcodile','t-shirt',1233.23,12,12);

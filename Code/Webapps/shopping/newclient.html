@@ -1,0 +1,62 @@
+<HTML>
+<Head><FONT  face="comic sans ms" size=3 COLOR=#006600><center><hr color=#99CC00>Registration Form<hr color=#99CC00></CENTER></font></head>
+<script language="javascript">
+   function use()
+   {
+      frm1.T1.focus();
+   }
+
+   function check()
+   {
+   a=frm1.T1.value.length; 
+   b=frm1.T2.value.length;
+   c=frm1.T3.value.length;
+   d=frm1.T4.value.length;
+   e=frm1.T5.value.length;
+	if( (a<=0 )||( b<=0)||( c<=0)||(d<=0)||(e<=0))
+        {
+		alert('Incomplete Information');
+		return false;
+       }
+       
+        else
+        if(b>=11)
+        {
+        alert('Product name max size is 10');
+        return false;
+        }
+	else
+	    {   
+          return true;
+         }
+     }
+  </script>
+
+
+<body bgcolor onload="use()">
+<form method="POST"  name="frm1" action="client_jsp.jsp" onSubmit="return check()">
+ 
+<p><font face="Comic Sans MS" color="#008000" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="T1" size="20" maxlength=20>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Gender:&nbsp;&nbsp;&nbsp;&nbsp; <select size="1" name="D1">
+    <option>Male</option>
+    <option>Female</option>
+  </select></font></p>
+  <p><font face="Comic Sans MS" color="#008000" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  UserId:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="T2" size="20" maxlength=20>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="T4" size="20" maxlength=15>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></p>
+  <p><font face="Comic Sans MS" color="#008000" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Password:&nbsp; <input type="password" name="T3" size="20" maxlength=20>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Pin Code:&nbsp; <input type="text" name="T5" size="20" maxlength=10></font></p>
+  <p><font face="Comic Sans MS" color="#008000" size="2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Address:</font></p>
+  <p><font face="Comic Sans MS" color="#008000" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <textarea rows="3" name="S1" cols="24" maxlength=150></textarea></font></p>
+  <p>&nbsp;&nbsp; <font face="Comic Sans MS" color="#008000" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="Submit" value="Submit" name="B1"></p>
+
+</form>
+
+</BODY>
+</HTML>

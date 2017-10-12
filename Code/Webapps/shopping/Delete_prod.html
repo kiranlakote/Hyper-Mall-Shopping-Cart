@@ -1,0 +1,32 @@
+<HTML>
+<Head><FONT  face="comic sans ms" size=3 COLOR=#006600><center><hr color=#99CC00> Choose The Product Code To Be Modified<hr color=#99CC00></CENTER> </font></head>
+<body >
+<form method="POST" action="Modify_prod_jsp.jsp" >
+<pre>
+<%@ page import="java.sql.*" %>
+<jsp:useBean id="dcon" scope="session" class="dbean.DBCon" />
+<%
+	 
+	Connection con;
+	con=dcon.getCon()
+	Statement st=con.createStatement();
+	ResultSet rs=st.executeQuery("select p_code,p_name from prod_det order by p_code");
+%>	
+	<br><br><br><FONT  face='comic sans ms' size=2 COLOR=#006600>Product Code & Name:</font><select name='list' style='width:150'><br><br><br><br>
+<%	 
+		 while(rs.next())
+		  { 
+%>
+		 <option value=<%=rs.getString(1)%><%=rs.getString(1)%>---<%=rs.getString(2)%></option>
+<%	  
+		  }
+         
+%>
+         
+						  
+    <br><input type="submit" value="Get Record  ">       
+</pre>
+</form>
+
+</body>
+</HTML>

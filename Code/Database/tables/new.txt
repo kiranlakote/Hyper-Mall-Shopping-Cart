@@ -1,0 +1,107 @@
+create user eshop identified by eshop;
+grant connect,resource to eshop;
+connect eshop/eshop
+
+
+
+
+create table category
+(
+category_id varchar2(20),
+category_name varchar2(20),
+category_desc varchar2(20),
+CONSTRAINT category_id_pk PRIMARY KEY (category_id));
+
+
+create table products
+(
+product_id number(20),
+cat_id varchar2(20),
+product_name varchar2(20),
+product_desc varchar2(20),
+unit_price   number(20,5),
+units_in_stock number(20),
+units_in_order number(20),
+CONSTRAINT products_pk PRIMARY KEY (product_id),
+CONSTRAINT products_fk FOREIGN KEY (cat_id) REFERENCES category (category_id));
+
+
+
+CREATE TABLE LIST (
+ORDER_ID VARCHAR2(20),
+PRODUCT_ID VARCHAR2(20),
+PRODUCT_NAME VARCHAR2(20),
+QUANTITY NUMBER(20),
+UPRICE NUMBER(20,5),
+TOTAL  NUMBER(20,5),
+CONSTRAINT list_fk FOREIGN KEY (ORDER_ID) REFERENCES ORDERs(ORDER_ID)
+);
+
+
+create table merchent
+( name varchar2(20) primary key,
+  password varchar2(20)
+);
+
+
+create table credit2(
+BNUMBER                                            VARCHAR2(20)
+AMOUNT                                             NUMBER
+CNUMBER                                            NUMBER);
+
+
+create table prod_det(
+ P_CODE                                   VARCHAR2(5) primary key
+ P_NAME                                             VARCHAR2(10)
+ P_PRICE                                            NUMBER(10,2)
+ MIN_STOCK                                          NUMBER(5)
+ PRESENT_STOCK                                      NUMBER(5));
+
+
+create table purchase_det(
+ P_CODE                                             VARCHAR2(5)
+ P_NAME                                             VARCHAR2(10)
+ P_QTY                                              VARCHAR2(10)
+ P_PRICE                                            VARCHAR2(10)
+ PURSC_DATE                                         VARCHAR2(10)
+
+);
+
+
+
+create table (
+
+ P_CODE                                             VARCHAR2(5)
+ P_NAME                                             VARCHAR2(10)
+ P_QTY                                              NUMBER(4)
+ P_PRICE                                            NUMBER(5)
+ S_DATE                                             DATE
+);
+
+
+create table suggest(
+
+ NAME                                               VARCHAR2(15)
+ PHONE                                              VARCHAR2(10)
+ EMAILID                                            VARCHAR2(15)
+ ADDRESS                                            VARCHAR2(20)
+ ADVICE                                             VARCHAR2(300)
+);
+
+
+create table takeorders(orderid number(5),ordername varchar(15),orderqty number(5),orderprice number(10,2),ordertotprice number(12,2));
+
+
+drop table takeorders;
+ALTER TABLE CATEGORY DROP CONSTRAINT CATEGORY_ID_pk CASCADE;
+drop table category;
+ALTER TABLE PRODUCTS DROP CONSTRAINT PRODUCTS_PK CASCADE;
+drop table products;
+drop table merchent;
+
+insert into merchent values('merchent','merchent');
+insert into category values('1','phants','jeans');
+insert into category values('2','shirts','t-shirts');
+
+insert into products values('1','2','nick','t-shirt',123.23,12,12);
+insert into products values('2','2','corcodile','t-shirt',1233.23,12,12);

@@ -1,0 +1,63 @@
+<html>
+
+<script language="javascript">
+	function use()
+	{
+		frm.T1.focus();
+    }
+	function check()
+	{
+		a=frm.T1.value.length;
+		b=frm.T2.value.length;
+		c=frm.T3.value.length;
+		d=frm.S1.value.length;
+		e=frm.id.value.length;
+		if((a<=0)||(b<=0)||(c<=0)||(d<=0)||(e<=0))
+		{
+		alert('All values Are Compulsory ');
+		return false;
+		}
+		else
+		{
+		return true;
+		}
+	}
+</script>
+		
+<body onload="use()">
+<form method="POST" name=frm action="saveadvice_jsp.jsp" onSubmit="return check()">
+
+<TABLE bgcolor="#F8D307" width="100%" height="16">
+<TR>
+	<TD align="center"><A HREF="AdminLogin.html" target="f3"><font color=#006600 size=2><b>Personnel</b></A></TD>
+	<TD align="center" ><A HREF="Client.html"><font color=#006600 size=2><b>Client</b></A></TD>
+	<TD align="center" bgcolor=#99CC00><A HREF="suggestions.html"><font color=#006600 size=2><b>Feedback</b></A></TD>
+	<TD align="center"><A HREF="help.html"><font color=#006600 size=2><b>Help</b></A></TD>
+</TR>
+</TABLE>
+<TABLE width="100%" bgcolor="#008000">
+<TR>
+	<TD></TD>
+</TR>
+</TABLE>
+<Head><FONT  face="comic sans ms" size=3 COLOR=#006600><center><hr color=#99CC00>Suggestions<hr color=#99CC00></CENTER></font></head>
+
+  <p><font color="#008000" size=2 face="Comic Sans MS">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  :</font><input type="text" name="T1" size="20"></p>
+  <p><font color="#008000" face="Comic Sans MS" size=2>Phone Number  :</font><input type="text" name="T2" size="20"></p>
+  <p><font color="#008000" face="Comic Sans MS" size=2>Email Id&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  :<input type="text" name="id" size="20"></font></p>
+  <p><font color="#008000" face="Comic Sans MS" size=2>
+  <p><font color="#008000" face="Comic Sans MS" size=2>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  :<input type="text" name="T3" size="20"></font></p>
+  <p><font color="#008000" face="Comic Sans MS" size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Type In Your Suggestions.......</font></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <textarea rows="4" name="S1" cols="40"></textarea></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="submit" value="Submit" name="B1"></p>
+</form>
+
+</body>
+
+</html>
